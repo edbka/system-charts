@@ -4,6 +4,8 @@ ARG DAPPER_HOST_ARCH
 ENV HOST_ARCH=amd64 ARCH=amd64
 ENV CATTLE_HELM_VERSION v2.10.0-rancher10
 
+COPY . /src/github.com/rancher/system-charts/
+
 RUN apt-get update && \
     apt-get install -y gcc ca-certificates git wget curl vim less file xz-utils unzip && \
     rm -f /bin/sh && ln -s /bin/bash /bin/sh
